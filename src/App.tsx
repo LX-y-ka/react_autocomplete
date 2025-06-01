@@ -20,7 +20,7 @@ export const App: React.FC = () => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
     setIsMatch(false);
-    applyQuery(event.target.value);
+    applyQuery(event.target.value.toLowerCase());
   };
 
   const filtredPeople = useMemo(() => {
@@ -30,6 +30,8 @@ export const App: React.FC = () => {
 
     if (filtredList.length === 0) {
       setHasMatch(false);
+    } else {
+      setHasMatch(true);
     }
 
     return filtredList;
