@@ -28,6 +28,8 @@ export const Autocomplete: React.FC = () => {
       setHasMatch(true);
     }
 
+    setPerson(null);
+
     return filtredList;
   }, [applQuery]);
 
